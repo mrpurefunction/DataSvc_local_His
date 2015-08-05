@@ -1,0 +1,104 @@
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.exe
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.exe
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.exe.config
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\PublicLib.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\EnvirPortal_Data\bin\Debug\PublicLib.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.exe.config
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.exe
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.exe
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.exe.config
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.exe
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.exe
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.exe.config
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.exe
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.exe
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.exe.config
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.exe
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.dll
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Caching.xml
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.exe
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.pdb

@@ -1,0 +1,101 @@
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\LocalPIData.exe.config
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\LocalPIData.exe
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\LocalPIData.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\PI.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\PublicLib.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\PI.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\PublicLib.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\obj\x86\Debug\LocalPIData.exe
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\obj\x86\Debug\LocalPIData.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.Unity.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\ws_test\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\LocalPIData.exe.config
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\LocalPIData.exe
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\LocalPIData.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.Unity.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.Unity.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\obj\x86\Debug\LocalPIData.exe
+E:\Env_SQL_XLS\DataSvc\ws_test_20150215\LocalPIData\obj\x86\Debug\LocalPIData.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\LocalPIData.exe.config
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\LocalPIData.exe
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\LocalPIData.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.Unity.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\obj\x86\Debug\LocalPIData.exe
+C:\Documents and Settings\Administrator\桌面\ZhiQi\yueqing\data_svc_his\ws_test_20150215\LocalPIData\obj\x86\Debug\LocalPIData.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\LocalPIData.exe.config
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\LocalPIData.exe
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\LocalPIData.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\obj\x86\Debug\LocalPIData.exe
+E:\Env_SQL_XLS\DataSvc\ws_test_20150310\LocalPIData\obj\x86\Debug\LocalPIData.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\LocalPIData.exe.config
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\LocalPIData.exe
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\LocalPIData.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides.dll
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.dll
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\obj\x86\Debug\LocalPIData.exe
+E:\Env_SQL_XLS\DataSvc\DataSvc_local_His\ws_test_20150310\LocalPIData\obj\x86\Debug\LocalPIData.pdb
