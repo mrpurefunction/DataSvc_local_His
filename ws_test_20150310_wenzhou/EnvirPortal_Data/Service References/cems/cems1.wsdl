@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPiRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ts" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pv" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="mi" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPiRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPiRecordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRuleLogRd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ts" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mi" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRuleLogRdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddRuleLogRdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePiRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ts" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pv" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="mi" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePiRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePiRecordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRuleLogRd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ts" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mi" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRuleLogRdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateRuleLogRdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPiRecord_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ts" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pv" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="mi" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPiRecord_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPiRecord_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePiRecord_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ts" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pv" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="mi" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePiRecord_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePiRecord_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRuleLogRd_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ts" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cemstype" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRuleLogRd_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddRuleLogRd_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRuleLog_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ts" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cemstype" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRuleLog_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateRuleLog_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMonitorData_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ts" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="enterprise" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="indicatorid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="indicatorvalue" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMonitorData_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddMonitorData_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMonitorData_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ts" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="enterprise" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="indicatorid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="indicatorvalue" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMonitorData_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateMonitorData_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddExceptionGroup_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="envirid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddExceptionGroup_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddExceptionGroup_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateExceptionGroup_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="envirid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateExceptionGroup_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateExceptionGroup_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddExceptionRuleLog_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="envirid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ruleid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddExceptionRuleLog_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddExceptionRuleLog_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateExceptionRuleLog_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="envirid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ruleid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateExceptionRuleLog_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateExceptionRuleLog_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPiAvgRecord_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pv" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="ts" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ut" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPiAvgRecord_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPiAvgRecord_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCalibRecord_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="st" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="et" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCalibRecord_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddCalibRecord_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCalibRuleValueRecord_c">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pv" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="ts" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ut" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="pi" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="am" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCalibRuleValueRecord_cResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddCalibRuleValueRecord_cResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPiRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPiRecord" />
+  </wsdl:message>
+  <wsdl:message name="AddPiRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPiRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddRuleLogRdSoapIn">
+    <wsdl:part name="parameters" element="tns:AddRuleLogRd" />
+  </wsdl:message>
+  <wsdl:message name="AddRuleLogRdSoapOut">
+    <wsdl:part name="parameters" element="tns:AddRuleLogRdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePiRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePiRecord" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePiRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePiRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRuleLogRdSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRuleLogRd" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRuleLogRdSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRuleLogRdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPiRecord_cSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPiRecord_c" />
+  </wsdl:message>
+  <wsdl:message name="AddPiRecord_cSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPiRecord_cResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePiRecord_cSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePiRecord_c" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePiRecord_cSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePiRecord_cResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddRuleLogRd_cSoapIn">
+    <wsdl:part name="parameters" element="tns:AddRuleLogRd_c" />
+  </wsdl:message>
+  <wsdl:message name="AddRuleLogRd_cSoapOut">
+    <wsdl:part name="parameters" element="tns:AddRuleLogRd_cResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRuleLog_cSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRuleLog_c" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRuleLog_cSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRuleLog_cResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMonitorData_cSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMonitorData_c" />
+  </wsdl:message>
+  <wsdl:message name="AddMonitorData_cSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMonitorData_cResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMonitorData_cSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMonitorData_c" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMonitorData_cSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMonitorData_cResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddExceptionGroup_cSoapIn">
+    <wsdl:part name="parameters" element="tns:AddExceptionGroup_c" />
+  </wsdl:message>
+  <wsdl:message name="AddExceptionGroup_cSoapOut">
+    <wsdl:part name="parameters" element="tns:AddExceptionGroup_cResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateExceptionGroup_cSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateExceptionGroup_c" />
+  </wsdl:message>
+  <wsdl:message name="UpdateExceptionGroup_cSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateExceptionGroup_cResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddExceptionRuleLog_cSoapIn">
+    <wsdl:part name="parameters" element="tns:AddExceptionRuleLog_c" />
+  </wsdl:message>
+  <wsdl:message name="AddExceptionRuleLog_cSoapOut">
+    <wsdl:part name="parameters" element="tns:AddExceptionRuleLog_cResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateExceptionRuleLog_cSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateExceptionRuleLog_c" />
+  </wsdl:message>
+  <wsdl:message name="UpdateExceptionRuleLog_cSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateExceptionRuleLog_cResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPiAvgRecord_cSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPiAvgRecord_c" />
+  </wsdl:message>
+  <wsdl:message name="AddPiAvgRecord_cSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPiAvgRecord_cResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCalibRecord_cSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCalibRecord_c" />
+  </wsdl:message>
+  <wsdl:message name="AddCalibRecord_cSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCalibRecord_cResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCalibRuleValueRecord_cSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCalibRuleValueRecord_c" />
+  </wsdl:message>
+  <wsdl:message name="AddCalibRuleValueRecord_cSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCalibRuleValueRecord_cResponse" />
+  </wsdl:message>
+  <wsdl:portType name="cemsSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPiRecord">
+      <wsdl:input message="tns:AddPiRecordSoapIn" />
+      <wsdl:output message="tns:AddPiRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRuleLogRd">
+      <wsdl:input message="tns:AddRuleLogRdSoapIn" />
+      <wsdl:output message="tns:AddRuleLogRdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePiRecord">
+      <wsdl:input message="tns:UpdatePiRecordSoapIn" />
+      <wsdl:output message="tns:UpdatePiRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRuleLogRd">
+      <wsdl:input message="tns:UpdateRuleLogRdSoapIn" />
+      <wsdl:output message="tns:UpdateRuleLogRdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPiRecord_c">
+      <wsdl:input message="tns:AddPiRecord_cSoapIn" />
+      <wsdl:output message="tns:AddPiRecord_cSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePiRecord_c">
+      <wsdl:input message="tns:UpdatePiRecord_cSoapIn" />
+      <wsdl:output message="tns:UpdatePiRecord_cSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRuleLogRd_c">
+      <wsdl:input message="tns:AddRuleLogRd_cSoapIn" />
+      <wsdl:output message="tns:AddRuleLogRd_cSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRuleLog_c">
+      <wsdl:input message="tns:UpdateRuleLog_cSoapIn" />
+      <wsdl:output message="tns:UpdateRuleLog_cSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMonitorData_c">
+      <wsdl:input message="tns:AddMonitorData_cSoapIn" />
+      <wsdl:output message="tns:AddMonitorData_cSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMonitorData_c">
+      <wsdl:input message="tns:UpdateMonitorData_cSoapIn" />
+      <wsdl:output message="tns:UpdateMonitorData_cSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddExceptionGroup_c">
+      <wsdl:input message="tns:AddExceptionGroup_cSoapIn" />
+      <wsdl:output message="tns:AddExceptionGroup_cSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExceptionGroup_c">
+      <wsdl:input message="tns:UpdateExceptionGroup_cSoapIn" />
+      <wsdl:output message="tns:UpdateExceptionGroup_cSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddExceptionRuleLog_c">
+      <wsdl:input message="tns:AddExceptionRuleLog_cSoapIn" />
+      <wsdl:output message="tns:AddExceptionRuleLog_cSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExceptionRuleLog_c">
+      <wsdl:input message="tns:UpdateExceptionRuleLog_cSoapIn" />
+      <wsdl:output message="tns:UpdateExceptionRuleLog_cSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPiAvgRecord_c">
+      <wsdl:input message="tns:AddPiAvgRecord_cSoapIn" />
+      <wsdl:output message="tns:AddPiAvgRecord_cSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCalibRecord_c">
+      <wsdl:input message="tns:AddCalibRecord_cSoapIn" />
+      <wsdl:output message="tns:AddCalibRecord_cSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCalibRuleValueRecord_c">
+      <wsdl:input message="tns:AddCalibRuleValueRecord_cSoapIn" />
+      <wsdl:output message="tns:AddCalibRuleValueRecord_cSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="cemsSoap" type="tns:cemsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPiRecord">
+      <soap:operation soapAction="http://tempuri.org/AddPiRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRuleLogRd">
+      <soap:operation soapAction="http://tempuri.org/AddRuleLogRd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePiRecord">
+      <soap:operation soapAction="http://tempuri.org/UpdatePiRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRuleLogRd">
+      <soap:operation soapAction="http://tempuri.org/UpdateRuleLogRd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPiRecord_c">
+      <soap:operation soapAction="http://tempuri.org/AddPiRecord_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePiRecord_c">
+      <soap:operation soapAction="http://tempuri.org/UpdatePiRecord_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRuleLogRd_c">
+      <soap:operation soapAction="http://tempuri.org/AddRuleLogRd_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRuleLog_c">
+      <soap:operation soapAction="http://tempuri.org/UpdateRuleLog_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMonitorData_c">
+      <soap:operation soapAction="http://tempuri.org/AddMonitorData_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMonitorData_c">
+      <soap:operation soapAction="http://tempuri.org/UpdateMonitorData_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExceptionGroup_c">
+      <soap:operation soapAction="http://tempuri.org/AddExceptionGroup_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExceptionGroup_c">
+      <soap:operation soapAction="http://tempuri.org/UpdateExceptionGroup_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExceptionRuleLog_c">
+      <soap:operation soapAction="http://tempuri.org/AddExceptionRuleLog_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExceptionRuleLog_c">
+      <soap:operation soapAction="http://tempuri.org/UpdateExceptionRuleLog_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPiAvgRecord_c">
+      <soap:operation soapAction="http://tempuri.org/AddPiAvgRecord_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCalibRecord_c">
+      <soap:operation soapAction="http://tempuri.org/AddCalibRecord_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCalibRuleValueRecord_c">
+      <soap:operation soapAction="http://tempuri.org/AddCalibRuleValueRecord_c" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="cemsSoap12" type="tns:cemsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPiRecord">
+      <soap12:operation soapAction="http://tempuri.org/AddPiRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRuleLogRd">
+      <soap12:operation soapAction="http://tempuri.org/AddRuleLogRd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePiRecord">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePiRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRuleLogRd">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRuleLogRd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPiRecord_c">
+      <soap12:operation soapAction="http://tempuri.org/AddPiRecord_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePiRecord_c">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePiRecord_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRuleLogRd_c">
+      <soap12:operation soapAction="http://tempuri.org/AddRuleLogRd_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRuleLog_c">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRuleLog_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMonitorData_c">
+      <soap12:operation soapAction="http://tempuri.org/AddMonitorData_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMonitorData_c">
+      <soap12:operation soapAction="http://tempuri.org/UpdateMonitorData_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExceptionGroup_c">
+      <soap12:operation soapAction="http://tempuri.org/AddExceptionGroup_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExceptionGroup_c">
+      <soap12:operation soapAction="http://tempuri.org/UpdateExceptionGroup_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExceptionRuleLog_c">
+      <soap12:operation soapAction="http://tempuri.org/AddExceptionRuleLog_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExceptionRuleLog_c">
+      <soap12:operation soapAction="http://tempuri.org/UpdateExceptionRuleLog_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPiAvgRecord_c">
+      <soap12:operation soapAction="http://tempuri.org/AddPiAvgRecord_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCalibRecord_c">
+      <soap12:operation soapAction="http://tempuri.org/AddCalibRecord_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCalibRuleValueRecord_c">
+      <soap12:operation soapAction="http://tempuri.org/AddCalibRuleValueRecord_c" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="cems">
+    <wsdl:port name="cemsSoap" binding="tns:cemsSoap">
+      <soap:address location="http://localhost:8010/cems.asmx" />
+    </wsdl:port>
+    <wsdl:port name="cemsSoap12" binding="tns:cemsSoap12">
+      <soap12:address location="http://localhost:8010/cems.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
