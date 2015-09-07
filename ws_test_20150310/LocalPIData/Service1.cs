@@ -8,6 +8,7 @@ using System.ServiceProcess;
 using System.Text;
 
 using System.Threading;
+using EPASync;
 
 namespace LocalPIData
 {
@@ -72,9 +73,27 @@ namespace LocalPIData
                 }
                 else
                 {
-                    (new Biz()).CalibSpanBiz(DateTime.Now.AddMonths(-1), DateTime.Now/*.AddMonths(-3).AddDays(90)*/);
-                    (new Biz()).CalibRuleValueBiz(DateTime.Parse(DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")));
-                    (new Biz()).CalibRuleValueBiz_Outside(DateTime.Parse(DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")));
+                    //(new Biz()).CalibSpanBiz(DateTime.Now.AddMonths(-1), DateTime.Now/*.AddMonths(-3).AddDays(90)*/);
+                    //(new Biz()).CalibRuleValueBiz(DateTime.Parse(DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")));
+                    //(new Biz()).CalibRuleValueBiz_Outside(DateTime.Parse(DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")));
+
+                    //update the above code to sync mode to avoid t_rulelogs modification
+                    EPASync.ComparerEngine ce = new ComparerEngine();
+                    DateTime ts = DateTime.Now;
+
+                    (new Biz()).CalibSpanBiz_Sync(ts.AddMonths(-3), ts, ce);
+                    //add something for select existed rds
+                    ce.InitCrls2(ts.AddMonths(-3), ts, 0, new int[] { 0 });
+                    ce.MarkCrls2();
+                    ce.CommitCrls2();
+
+                    (new Biz()).CalibRuleValueBiz_Sync(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(ts.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")), ce);
+                    (new Biz()).CalibRuleValueBiz_Outside_Sync(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(ts.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")), ce);
+                    //add something for select existed rds
+                    ce.InitCrvls2(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-dd HH:00:00")).AddHours(-3.0), DateTime.Parse(ts.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")).AddHours(-1.0), 0, new int[] { 0 });
+                    ce.MarkCrvls2();
+                    ce.CommitCrvls2();
+
                     //modified 2015/05/13 modified again 2015/05/21
                     (new Biz()).HistoryBiz(DateTime.Parse(DateTime.Now.AddDays(-14).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now/*.AddDays(-1)*/.AddHours(-1.0).ToString("yyyy-MM-dd HH:00:00")));
                     (new Biz()).HistoryBiz_avg(DateTime.Parse(DateTime.Now.AddDays(-21).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")));                  
