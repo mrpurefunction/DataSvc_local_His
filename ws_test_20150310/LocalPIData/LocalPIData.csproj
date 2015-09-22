@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsycStop.cs" />
     <Compile Include="Biz.cs" />
     <Compile Include="PIAvgData.cs" />
     <Compile Include="PIHisData.cs" />

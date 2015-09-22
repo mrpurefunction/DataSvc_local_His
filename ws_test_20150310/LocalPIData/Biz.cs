@@ -653,5 +653,179 @@ namespace LocalPIData
             }
         }
 
+        /// <summary>
+        /// async running
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        public void RunningAsync_Month(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            //get raw data from  SCR_StartStop_Outlet_async then deal with these rds
+            //[machineid],[pointname],[ts1],[ts2],[scrgrouptype],[machinegrouptype],[src]
+            DataSet asyncrd = (new SQLPart()).GetRelatedAsyncRd(st, et);
+            if (asyncrd != null)
+            {
+                foreach (DataRow dr in asyncrd.Tables[0].Rows)
+                {
+                    //find appropriate rds
+                    if (!((int.Parse(dr["src"].ToString()) == 2) && (dr["machinegrouptype"].ToString() == "")))
+                    {
+                        //Get span for monthly biz
+                        List<StartEndPair> sepl = GetStartEndPair_Month(DateTime.Parse(dr["ts1"].ToString()), DateTime.Parse(dr["ts2"].ToString()));
+                        if (sepl != null)
+                        {
+                            foreach (StartEndPair sep in sepl)
+                            {
+                                //if the span is between the seach area
+                                if ((sep.StartTime <= et) && (sep.StartTime >= st))
+                                {
+                                    if ((dr["scrgrouptype"].ToString() == "") && (sep == sepl.Last()))
+                                    {
+                                        continue;
+                                    }
+                                    ce.AddToAscrl(dr["pointname"].ToString(), sep.StartTime, sep.EndTime);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// machine stop span month statistic
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        public void MachineStopStatistic_Month(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            //get raw data from  machine_startstop then deal with these rds
+            //[pointname],[starttime],[endtime],[grouptype]
+
+            DataSet mstoprd = (new SQLPart()).GetRelatedMachineStopRd(st, et);
+            if (mstoprd != null)
+            {
+                foreach (DataRow dr in mstoprd.Tables[0].Rows)
+                {
+                    //Get span for monthly biz
+                    List<StartEndPair> sepl = GetStartEndPair_Month(DateTime.Parse(dr["starttime"].ToString()), DateTime.Parse(dr["endtime"].ToString()));
+                    if (sepl != null)
+                    {
+                        foreach (StartEndPair sep in sepl)
+                        {
+                            //if the span is between the seach area
+                            if ((sep.StartTime <= et) && (sep.StartTime >= st))
+                            {
+                                //if it has undetermined condition, jump over the last rd
+                                if ((dr["grouptype"].ToString() == "") && (sep == sepl.Last()))
+                                {
+                                    continue;
+                                }
+                                ce.AddToMsl(dr["pointname"].ToString(), sep.StartTime, sep.EndTime);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// hour avg value calculation--month
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        public void HourAvgValue_Month(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            //get raw data from machine_startstop_reversed for start stop span then deal with these rds
+            //[machineid],[starttime],[endtime],[grouptype]
+            //with these rds, get pi avg value
+            DataSet mrunningrd = (new SQLPart()).GetRelatedMachineRunningRd(st, et);
+            if (mrunningrd != null)
+            {
+                foreach (DataRow dr in mrunningrd.Tables[0].Rows)
+                {
+                    List<StartEndPair> sepl = GetStartEndPair_Month(DateTime.Parse(dr["starttime"].ToString()), DateTime.Parse(dr["endtime"].ToString()));
+                    if (sepl != null)
+                    {
+                        foreach (StartEndPair sep in sepl)
+                        {
+                            if ((sep.StartTime <= et) && (sep.StartTime >= st))
+                            {
+                                // add biz logic
+                                if ((dr["grouptype"].ToString() == "") && (sep == sepl.Last()))
+                                {
+                                    continue;
+                                }
+
+                                DataSet pointsofmachine = (new SQLPart()).GetPointsOfMachine_avg(int.Parse(dr["machineid"].ToString()));
+                                if (pointsofmachine != null)
+                                {
+                                    foreach (DataRow dr2 in pointsofmachine.Tables[0].Rows)
+                                    {
+                                        double? avgvalue = (new PIAvgData()).GetAvgValue(dr2["pointname"].ToString(), sep.StartTime, sep.EndTime, int.Parse(dr2["shiftsecs"].ToString()));
+                                        //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
+                                        if (avgvalue == null)
+                                        {
+                                            if (ce.hal_dst.Where(i => i.pointname == dr2["pointname"].ToString() && i.starttime == sep.StartTime && i.endtime == sep.EndTime).Count() > 0)
+                                            {
+                                                ce.hal_dst.RemoveAll(i => i.pointname == dr2["pointname"].ToString() && i.starttime == sep.StartTime && i.endtime == sep.EndTime);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            ce.AddToHal(dr2["pointname"].ToString(), sep.StartTime, sep.EndTime, (double)avgvalue);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public class StartEndPair
+        {
+            public DateTime StartTime { get; set; }
+            public DateTime EndTime { get; set; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <returns></returns>
+        public List<StartEndPair> GetStartEndPair_Month(DateTime st, DateTime et)
+        {
+            List<StartEndPair> pair = new List<StartEndPair>();
+            if (st < et)
+            {
+                DateTime temp = st;
+                while (temp < et)
+                {
+                    if (DateTime.Parse(temp.AddMonths(1).ToString("yyyy-MM-01 00:00:00")) < et)
+                    {
+                        pair.Add(new StartEndPair() { StartTime = temp, EndTime = DateTime.Parse(temp.AddMonths(1).ToString("yyyy-MM-01 00:00:00")) });
+                        temp = DateTime.Parse(temp.AddMonths(1).ToString("yyyy-MM-01 00:00:00"));
+                    }
+                    else
+                    {
+                        pair.Add(new StartEndPair() { StartTime = temp, EndTime = et });
+                        break;
+                    }
+                }
+                return pair;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
     }
 }

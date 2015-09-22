@@ -94,6 +94,22 @@ namespace LocalPIData
                     ce.MarkCrvls2();
                     ce.CommitCrvls2();
 
+                    (new Biz()).RunningAsync_Month(DateTime.Parse(ts.AddMonths(-6).ToString("yyyy-MM-01 00:00:00")), ts, ce);
+                    ce.InitAscrls(DateTime.Parse(ts.AddMonths(-6).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    ce.MarkAscrls();
+                    ce.CommitAscrls();
+
+                    (new Biz()).MachineStopStatistic_Month(DateTime.Parse(ts.AddMonths(-6).ToString("yyyy-MM-01 00:00:00")), ts, ce);
+                    ce.InitMsls(DateTime.Parse(ts.AddMonths(-6).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    ce.MarkMsls();
+                    ce.CommitMsls();
+
+                    //init dst dataset first
+                    ce.InitHals(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    (new Biz()).HourAvgValue_Month(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-01 00:00:00")), ts, ce);
+                    ce.MarkHals();
+                    ce.CommitHals();
+
                     //modified 2015/05/13 modified again 2015/05/21
                     (new Biz()).HistoryBiz(DateTime.Parse(DateTime.Now.AddDays(-14).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now/*.AddDays(-1)*/.AddHours(-1.0).ToString("yyyy-MM-dd HH:00:00")));
                     (new Biz()).HistoryBiz_avg(DateTime.Parse(DateTime.Now.AddDays(-21).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")));                  

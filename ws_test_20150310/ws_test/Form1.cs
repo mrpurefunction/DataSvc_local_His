@@ -34,6 +34,11 @@ namespace ws_test
         private void button1_Click(object sender, EventArgs e)
         {
             //c.AddPiRecord(new DateTime(2010, 1, 1, 0, 0, 0), "abcd", 0.4f, 1, 1);
+
+            //(new LocalPIData.SQLPart()).GetRelatedAsyncRd(new DateTime(2015, 3, 5), new DateTime(2015, 6, 1));
+            (new LocalPIData.SQLPart()).GetRelatedMachineRunningRd(new DateTime(2015, 3, 5), new DateTime(2015, 6, 1));
+            //(new LocalPIData.SQLPart()).GetRelatedMachineStopRd(new DateTime(2015, 3, 5), new DateTime(2015, 6, 1));
+            (new LocalPIData.Biz()).GetStartEndPair_Month(new DateTime(2015, 4, 25), new DateTime(2015, 6, 2));
         }
 
         /// <summary>

@@ -125,6 +125,7 @@ C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_2015
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.exe.config
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.exe
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\bin\Debug\EnvirPortal_Data.pdb
-C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.exe
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.pdb
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.csprojResolveAssemblyReference.cache
