@@ -130,3 +130,5 @@ C:\Users\Administrator\Desktop\ws_test_20150310\LocalPIData\obj\x86\Debug\LocalP
 C:\Users\zhefeng\Desktop\ws_test_20150310\LocalPIData\bin\Debug\LocalPIData.exe.config
 C:\Users\zhefeng\Desktop\ws_test_20150310\LocalPIData\obj\x86\Debug\LocalPIData.exe
 C:\Users\zhefeng\Desktop\ws_test_20150310\LocalPIData\obj\x86\Debug\LocalPIData.pdb
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\MonthAvgCalculation.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\MonthAvgCalculation.pdb

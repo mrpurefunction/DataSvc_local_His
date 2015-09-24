@@ -221,3 +221,5 @@ C:\Users\Administrator\Desktop\ws_test_20150310\ws_test\bin\Debug\Microsoft.Prac
 C:\Users\zhefeng\Desktop\ws_test_20150310\ws_test\bin\Debug\Local_His.exe.config
 C:\Users\zhefeng\Desktop\ws_test_20150310\ws_test\obj\x86\Debug\Local_His.exe
 C:\Users\zhefeng\Desktop\ws_test_20150310\ws_test\obj\x86\Debug\Local_His.pdb
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\ws_test\bin\Debug\MonthAvgCalculation.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\ws_test\bin\Debug\MonthAvgCalculation.pdb

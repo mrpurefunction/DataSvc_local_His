@@ -52,6 +52,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
+    <Reference Include="MonthAvgCalculation">
+      <HintPath>..\..\..\EPASync\MonthAvgCalculation\bin\Debug\MonthAvgCalculation.dll</HintPath>
+    </Reference>
     <Reference Include="PI">
       <HintPath>..\..\ArithmeticFuncCore_20150112\PI\bin\Debug\PI.dll</HintPath>
     </Reference>

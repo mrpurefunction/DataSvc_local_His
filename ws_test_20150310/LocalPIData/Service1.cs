@@ -110,6 +110,9 @@ namespace LocalPIData
                     ce.MarkHals();
                     ce.CommitHals();
 
+                    //
+                    (new MonthAvgCalculation.Biz()).SyncHourAvg_Month(-3, ce);
+
                     //modified 2015/05/13 modified again 2015/05/21
                     (new Biz()).HistoryBiz(DateTime.Parse(DateTime.Now.AddDays(-14).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now/*.AddDays(-1)*/.AddHours(-1.0).ToString("yyyy-MM-dd HH:00:00")));
                     (new Biz()).HistoryBiz_avg(DateTime.Parse(DateTime.Now.AddDays(-21).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")));                  
