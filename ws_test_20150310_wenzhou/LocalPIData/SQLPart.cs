@@ -219,7 +219,7 @@ namespace LocalPIData
                 StringBuilder sb = new StringBuilder();
                 sb.Append("select count(*) from PIAvgRecords t where ");
                 sb.Append("t.pname = '" + pn + "' and ");
-                sb.Append("t.timestamps = '" + ts.ToString("yyyy-MM-dd HH:mm:ss")+"'");
+                sb.Append("t.timestamps = '" + ts.ToString("yyyy-MM-dd HH:mm:ss") + "'");
                 Database db = DatabaseFactory.CreateDatabase("dbconn");
                 System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
                 if ((int)db.ExecuteScalar(dbc) > 0)
@@ -417,7 +417,7 @@ namespace LocalPIData
         {
             try
             {
-                if (IsCalibSpanRdExisted(pn,st,et) == false)
+                if (IsCalibSpanRdExisted(pn, st, et) == false)
                 {
                     //not existed
                     StringBuilder sb = new StringBuilder();
@@ -571,6 +571,127 @@ namespace LocalPIData
                 sb.Append("select top 1 * from t_RulelogS t where t.rulename='");
                 sb.Append(pn + "' and ");
                 sb.Append("t.timelog<'" + et.ToString("yyyy-MM-dd HH:mm:ss") + "' and t.AlarmLog='仪表标定' order by t.timelog desc");
+                Database db = DatabaseFactory.CreateDatabase("dbconn");
+                System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
+                return db.ExecuteDataSet(dbc);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// get async rd from Db 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <returns></returns>
+        public DataSet GetRelatedAsyncRd(DateTime st, DateTime et)
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("select t.machineid,t.pointname,t.ts1,t.ts2,isnull(t.scrgrouptype,'') as scrgrouptype,isnull(t.machinegrouptype,'') as machinegrouptype,t.src from SCR_StartStop_Outlet_async t where (t.ts1>='");
+                sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                sb.Append("t.ts1<='" + et.ToString("yyyy-MM-dd HH:mm:ss") + "') or ");
+
+                sb.Append("(t.ts2>='");
+                sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                sb.Append("t.ts2<='" + et.ToString("yyyy-MM-dd HH:mm:ss") + "') or ");
+
+                sb.Append("(t.ts1<'");
+                sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                sb.Append("t.ts2>'" + et.ToString("yyyy-MM-dd HH:mm:ss") + "')");
+
+                Database db = DatabaseFactory.CreateDatabase("dbconn");
+                System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
+                return db.ExecuteDataSet(dbc);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// get machine stop span rd from db
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <returns></returns>
+        public DataSet GetRelatedMachineStopRd(DateTime st, DateTime et)
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("select t.pointname,t.starttime,t.endtime,isnull(t.grouptype,'') as grouptype from machine_startstop t where (t.starttime>='");
+                sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                sb.Append("t.starttime<='" + et.ToString("yyyy-MM-dd HH:mm:ss") + "') or ");
+
+                sb.Append("(t.endtime>='");
+                sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                sb.Append("t.endtime<='" + et.ToString("yyyy-MM-dd HH:mm:ss") + "') or ");
+
+                sb.Append("(t.starttime<'");
+                sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                sb.Append("t.endtime>'" + et.ToString("yyyy-MM-dd HH:mm:ss") + "')");
+
+                Database db = DatabaseFactory.CreateDatabase("dbconn");
+                System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
+                return db.ExecuteDataSet(dbc);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// get machine running span rd
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <returns></returns>
+        public DataSet GetRelatedMachineRunningRd(DateTime st, DateTime et)
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("select t.machineid,t.starttime,t.endtime,isnull(t.grouptype,'') as grouptype from Machine_StartStop_reversed_Machineid t where (t.starttime>='");
+                sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                sb.Append("t.starttime<='" + et.ToString("yyyy-MM-dd HH:mm:ss") + "') or ");
+
+                sb.Append("(t.endtime>='");
+                sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                sb.Append("t.endtime<='" + et.ToString("yyyy-MM-dd HH:mm:ss") + "') or ");
+
+                sb.Append("(t.starttime<'");
+                sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                sb.Append("t.endtime>'" + et.ToString("yyyy-MM-dd HH:mm:ss") + "')");
+
+                Database db = DatabaseFactory.CreateDatabase("dbconn");
+                System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
+                return db.ExecuteDataSet(dbc);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="machineid"></param>
+        /// <returns></returns>
+        public DataSet GetPointsOfMachine_avg(int machineid)
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("select t.pointname,s.shiftsecs from point_machine_map t inner join machineshiftsecs s on t.machineid=s.machineid where t.houravg=1 and t.machineid=");
+                sb.Append(machineid.ToString());
                 Database db = DatabaseFactory.CreateDatabase("dbconn");
                 System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
                 return db.ExecuteDataSet(dbc);

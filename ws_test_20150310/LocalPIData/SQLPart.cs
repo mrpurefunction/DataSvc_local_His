@@ -62,6 +62,44 @@ namespace LocalPIData
         }
 
         /// <summary>
+        /// update PI data into db 20150826
+        /// </summary>
+        /// <param name="ts"></param>
+        /// <param name="pn"></param>
+        /// <param name="pv"></param>
+        /// <param name="mi"></param>
+        /// <param name="pi"></param>
+        /// <returns></returns>
+        public int UpdatePiRecord(DateTime ts, string pn, float pv, int mi, int pi)
+        {
+            try
+            {
+                if (IsPiRdExisted(ts, pn, mi, pi) == true)
+                {
+                    //existed, modify the following code to update functionality
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("update PiRecords set pvalue=" + pv.ToString() + " where ");
+                    sb.Append("pname = '" + pn + "' and ");
+                    sb.Append("timestamps = '" + ts.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                    sb.Append("machineid =" + mi.ToString() + " and ");
+                    sb.Append("plantid=" + pi.ToString());
+                    Database db = DatabaseFactory.CreateDatabase("dbconn");
+                    System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
+                    db.ExecuteNonQuery(dbc);
+                    return 0;
+                }
+                else
+                {
+                    return AddPiRecord(ts, pn, pv, mi, pi);
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="ts"></param>
@@ -132,6 +170,41 @@ namespace LocalPIData
         }
 
         /// <summary>
+        /// update PI avg data into db 20150826
+        /// </summary>
+        /// <param name="pn"></param>
+        /// <param name="ts"></param>
+        /// <param name="pv"></param>
+        /// <param name="mi_pi"></param>
+        /// <returns></returns>
+        public int UpdateAvgRd(string pn, DateTime ts, double pv, params int[] mi_pi)
+        {
+            try
+            {
+                if (IsAvgRdExisted(pn, ts) == true)
+                {
+                    //existed, modify the following code to update functionality
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("update PIAvgRecords set pvalue=" + pv.ToString() + " where ");
+                    sb.Append("pname = '" + pn + "' and ");
+                    sb.Append("timestamps = '" + ts.ToString("yyyy-MM-dd HH:mm:ss") + "'");
+                    Database db = DatabaseFactory.CreateDatabase("dbconn");
+                    System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
+                    db.ExecuteNonQuery(dbc);
+                    return 0;
+                }
+                else
+                {
+                    return AddAvgRd(pn, ts, pv, mi_pi);
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="pn"></param>
@@ -146,7 +219,7 @@ namespace LocalPIData
                 StringBuilder sb = new StringBuilder();
                 sb.Append("select count(*) from PIAvgRecords t where ");
                 sb.Append("t.pname = '" + pn + "' and ");
-                sb.Append("t.timestamps = '" + ts.ToString("yyyy-MM-dd HH:mm:ss")+"'");
+                sb.Append("t.timestamps = '" + ts.ToString("yyyy-MM-dd HH:mm:ss") + "'");
                 Database db = DatabaseFactory.CreateDatabase("dbconn");
                 System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
                 if ((int)db.ExecuteScalar(dbc) > 0)
@@ -344,7 +417,7 @@ namespace LocalPIData
         {
             try
             {
-                if (IsCalibSpanRdExisted(pn,st,et) == false)
+                if (IsCalibSpanRdExisted(pn, st, et) == false)
                 {
                     //not existed
                     StringBuilder sb = new StringBuilder();
@@ -535,12 +608,12 @@ namespace LocalPIData
                 System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
                 return db.ExecuteDataSet(dbc);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
             }
         }
-        
+
         /// <summary>
         /// get machine stop span rd from db
         /// </summary>
@@ -556,7 +629,7 @@ namespace LocalPIData
                 sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
                 sb.Append("t.starttime<='" + et.ToString("yyyy-MM-dd HH:mm:ss") + "') or ");
 
-                sb.Append("(t.endtime>='");  
+                sb.Append("(t.endtime>='");
                 sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
                 sb.Append("t.endtime<='" + et.ToString("yyyy-MM-dd HH:mm:ss") + "') or ");
 
@@ -568,7 +641,7 @@ namespace LocalPIData
                 System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
                 return db.ExecuteDataSet(dbc);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -601,7 +674,7 @@ namespace LocalPIData
                 System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
                 return db.ExecuteDataSet(dbc);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -618,7 +691,7 @@ namespace LocalPIData
             {
                 StringBuilder sb = new StringBuilder();
                 sb.Append("select t.pointname,s.shiftsecs from point_machine_map t inner join machineshiftsecs s on t.machineid=s.machineid where t.houravg=1 and t.machineid=");
-                sb.Append(machineid.ToString());             
+                sb.Append(machineid.ToString());
                 Database db = DatabaseFactory.CreateDatabase("dbconn");
                 System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
                 return db.ExecuteDataSet(dbc);

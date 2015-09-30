@@ -53,7 +53,6 @@ C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_2015
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\MetaDataImport\bin\Debug\Microsoft.Practices.Unity.pdb
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\MetaDataImport\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\MetaDataImport\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
-C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\MetaDataImport\obj\x86\Debug\MetaDataImport.csprojResolveAssemblyReference.cache
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\MetaDataImport\obj\x86\Debug\MetaDataImport.Form1.resources
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\MetaDataImport\obj\x86\Debug\MetaDataImport.Properties.Resources.resources
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\MetaDataImport\obj\x86\Debug\MetaDataImport.csproj.GenerateResource.Cache
