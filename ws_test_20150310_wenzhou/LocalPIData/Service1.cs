@@ -81,6 +81,29 @@ namespace LocalPIData
                     EPASync.ComparerEngine ce = new ComparerEngine();
                     DateTime ts = DateTime.Now;
 
+                    //output total
+                    ce.InitPar_otls(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    (new Biz()).HourAvgValue_ForFurnace(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
+                    ce.MarkPar_otls();
+                    ce.CommitPar_otls();
+
+                    //output total (web 2.0 data)
+                    ce.InitPar_otwls(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    (new Biz()).HourAvgValue_ForFurnace_Web(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
+                    ce.MarkPar_otwls();
+                    ce.CommitPar_otwls();
+
+                    //output total remote
+                    ce.InitPar_otls2(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, Biz.plantid, null);
+                    ce.MarkPar_otls2();
+                    ce.CommitPar_otls2();
+
+                    //output total (web 2.0) remote
+                    ce.InitPar_otlsw2(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, Biz.plantid, null);
+                    ce.MarkPar_otwls2();
+                    ce.CommitPar_otwls2();
+
+
                     (new Biz()).CalibSpanBiz_Sync(ts.AddMonths(-3), ts, ce);
                     //add something for select existed rds
                     ce.InitCrls2(ts.AddMonths(-3), ts, 0, new int[] { 0 });

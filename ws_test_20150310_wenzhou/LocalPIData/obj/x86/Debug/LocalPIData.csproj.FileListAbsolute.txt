@@ -141,3 +141,4 @@ C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_2015
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310_wenzhou\LocalPIData\bin\Debug\MonthAvgCalculation.dll
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310_wenzhou\LocalPIData\bin\Debug\EPASync.pdb
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310_wenzhou\LocalPIData\bin\Debug\MonthAvgCalculation.pdb
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310_wenzhou\LocalPIData\obj\x86\Debug\LocalPIData.csprojResolveAssemblyReference.cache

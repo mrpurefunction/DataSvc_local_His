@@ -142,3 +142,4 @@ C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_2015
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310_wenzhou\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310_wenzhou\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.pdb
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310_wenzhou\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310_wenzhou\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.csprojResolveAssemblyReference.cache

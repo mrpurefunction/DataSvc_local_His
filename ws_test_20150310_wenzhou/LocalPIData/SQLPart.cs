@@ -169,6 +169,8 @@ namespace LocalPIData
             }
         }
 
+       
+
         /// <summary>
         /// update PI avg data into db 20150826
         /// </summary>
@@ -203,6 +205,7 @@ namespace LocalPIData
                 return -1;
             }
         }
+      
 
         /// <summary>
         /// 
@@ -234,6 +237,8 @@ namespace LocalPIData
             }
         }
 
+        
+
         /// <summary>
         /// 获取单个PI均值记录
         /// </summary>
@@ -248,6 +253,32 @@ namespace LocalPIData
                 Database db = DatabaseFactory.CreateDatabase("dbconn");
                 sb.Append("select * from PIAvgRecords t where ");
                 sb.Append("t.pname = '" + pn + "' and ");
+                sb.Append("t.timestamps = '" + ts.ToString("yyyy-MM-dd HH:mm:ss") + "'");
+                System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
+                return db.ExecuteDataSet(dbc);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mi"></param>
+        /// <param name="indicatorid"></param>
+        /// <param name="ts"></param>
+        /// <returns></returns>
+        public DataSet GetSingleAvgRd_Web(string mi, string indicatorid, DateTime ts)
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                Database db = DatabaseFactory.CreateDatabase("dbconn");
+                sb.Append("select indicatorvalue from EnvirIndicatorValue t where ");
+                sb.Append("substring(t.pointname,1,1) = '" + mi + "' and ");
+                sb.Append("t.indicatorid = " + indicatorid + " and ");
                 sb.Append("t.timestamps = '" + ts.ToString("yyyy-MM-dd HH:mm:ss") + "'");
                 System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
                 return db.ExecuteDataSet(dbc);
@@ -659,6 +690,39 @@ namespace LocalPIData
             {
                 StringBuilder sb = new StringBuilder();
                 sb.Append("select t.machineid,t.starttime,t.endtime,isnull(t.grouptype,'') as grouptype from Machine_StartStop_reversed_Machineid t where (t.starttime>='");
+                sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                sb.Append("t.starttime<='" + et.ToString("yyyy-MM-dd HH:mm:ss") + "') or ");
+
+                sb.Append("(t.endtime>='");
+                sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                sb.Append("t.endtime<='" + et.ToString("yyyy-MM-dd HH:mm:ss") + "') or ");
+
+                sb.Append("(t.starttime<'");
+                sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
+                sb.Append("t.endtime>'" + et.ToString("yyyy-MM-dd HH:mm:ss") + "')");
+
+                Database db = DatabaseFactory.CreateDatabase("dbconn");
+                System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
+                return db.ExecuteDataSet(dbc);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// get furnace running span rd
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <returns></returns>
+        public DataSet GetRelatedFurnaceRunningRd(DateTime st, DateTime et)
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("select t.machineid,t.starttime,t.endtime,isnull(t.grouptype,'') as grouptype from Furnace_StartStop_reversed_Machineid t where (t.starttime>='");
                 sb.Append(st.ToString("yyyy-MM-dd HH:mm:ss") + "' and ");
                 sb.Append("t.starttime<='" + et.ToString("yyyy-MM-dd HH:mm:ss") + "') or ");
 
