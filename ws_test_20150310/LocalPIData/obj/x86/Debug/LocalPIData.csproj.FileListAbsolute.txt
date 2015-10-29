@@ -131,7 +131,6 @@ C:\Users\zhefeng\Desktop\ws_test_20150310\LocalPIData\obj\x86\Debug\LocalPIData.
 C:\Users\zhefeng\Desktop\ws_test_20150310\LocalPIData\obj\x86\Debug\LocalPIData.pdb
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\MonthAvgCalculation.dll
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\MonthAvgCalculation.pdb
-C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\obj\x86\Debug\LocalPIData.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Users\Administrator\Desktop\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.dll
 C:\Users\Administrator\Desktop\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.dll
@@ -143,3 +142,4 @@ C:\Users\Administrator\Desktop\ws_test_20150310\LocalPIData\bin\Debug\MonthAvgCa
 C:\Users\Administrator\Desktop\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\Administrator\Desktop\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.pdb
 C:\Users\Administrator\Desktop\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\obj\x86\Debug\LocalPIData.csprojResolveAssemblyReference.cache

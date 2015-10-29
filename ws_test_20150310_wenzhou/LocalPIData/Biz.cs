@@ -826,14 +826,14 @@ namespace LocalPIData
                                             //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
                                             if (avgvalue == null)
                                             {
-                                                if (ce.par_ot_dst.Where(i => i.pname == dr2["pointname"].ToString() && i.timestamps == sep.StartTime).Count() > 0)
+                                                if (ce.par_ot_dst.Where(i => i.pname == dr2["pointname"].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00"))).Count() > 0)
                                                 {
-                                                    ce.par_ot_dst.RemoveAll(i => i.pname == dr2["pointname"].ToString() && i.timestamps == sep.StartTime);
+                                                    ce.par_ot_dst.RemoveAll(i => i.pname == dr2["pointname"].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
                                                 }
                                             }
                                             else
                                             {
-                                                ce.AddToPar_otls(dr2["pointname"].ToString(), sep.StartTime, (double)avgvalue);
+                                                ce.AddToPar_otls(dr2["pointname"].ToString(), DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")), (double)avgvalue);
                                             }
                                         }
                                     }
@@ -878,21 +878,21 @@ namespace LocalPIData
                                     {
                                         if (int.Parse(c.Split(',')[1]) == int.Parse(dr["machineid"].ToString()))
                                         {
-                                            DataSet ds = (new SQLPart()).GetSingleAvgRd_Web(c.Split(',')[1], c.Split(',')[2], sep.StartTime);
+                                            DataSet ds = (new SQLPart()).GetSingleAvgRd_Web(c.Split(',')[1], c.Split(',')[2], DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
                                             if (ds != null && ds.Tables[0].Rows.Count > 0)
                                             {
                                                 double? avgvalue = double.Parse(ds.Tables[0].Rows[0][0].ToString());
                                                 //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
                                                 if (avgvalue == null)
                                                 {
-                                                    if (ce.par_otw_dst.Where(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == sep.StartTime).Count() > 0)
+                                                    if (ce.par_otw_dst.Where(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00"))).Count() > 0)
                                                     {
-                                                        ce.par_otw_dst.RemoveAll(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == sep.StartTime);
+                                                        ce.par_otw_dst.RemoveAll(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    ce.AddToPar_otwls(c.Split(',')[0].ToString(), sep.StartTime, (double)avgvalue);
+                                                    ce.AddToPar_otwls(c.Split(',')[0].ToString(), DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")), (double)avgvalue);
                                                 }
                                             }
                                         }

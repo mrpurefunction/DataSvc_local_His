@@ -7,6 +7,8 @@ using System.Data;
 using System.Configuration;
 using System.IO;
 
+using System.Threading.Tasks;
+
 namespace LocalPIData
 {
     /// <summary>
@@ -828,14 +830,247 @@ namespace LocalPIData
                                             //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
                                             if (avgvalue == null)
                                             {
-                                                if (ce.par_ot_dst.Where(i => i.pname == dr2["pointname"].ToString() && i.timestamps == sep.StartTime).Count() > 0)
+                                                if (ce.par_ot_dst.Where(i => i.pname == dr2["pointname"].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00"))).Count() > 0)
                                                 {
-                                                    ce.par_ot_dst.RemoveAll(i => i.pname == dr2["pointname"].ToString() && i.timestamps == sep.StartTime);
+                                                    ce.par_ot_dst.RemoveAll(i => i.pname == dr2["pointname"].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
                                                 }
                                             }
                                             else
                                             {
-                                                ce.AddToPar_otls(dr2["pointname"].ToString(), sep.StartTime, (double)avgvalue);
+                                                ce.AddToPar_otls(dr2["pointname"].ToString(), DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")), (double)avgvalue);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <param name="ce"></param>
+        public void HourAvgValue_ForFurnace_Parallel(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            DateTime[] dt_a = EPASync.CocurrencyT.GetAppropriateTimeArray(st, et);
+            HourAvgValue_ForFurnace_1(dt_a[0], dt_a[1], ce);
+            HourAvgValue_ForFurnace_2(dt_a[2], dt_a[3], ce);
+            HourAvgValue_ForFurnace_3(dt_a[4], dt_a[5], ce);
+            HourAvgValue_ForFurnace_4(dt_a[6], dt_a[7], ce);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <param name="ce"></param>
+        private void HourAvgValue_ForFurnace_1(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
+            if (frunningrd != null)
+            {
+                foreach (DataRow dr in frunningrd.Tables[0].Rows)
+                {
+                    List<StartEndPair> sepl = GetStartEndPair_Hour(DateTime.Parse(dr["starttime"].ToString()), DateTime.Parse(dr["endtime"].ToString()));
+                    if (sepl != null)
+                    {
+                        foreach (StartEndPair sep in sepl)
+                        {
+                            if ((sep.StartTime <= et) && (sep.StartTime >= st))
+                            {
+                                // add biz logic
+                                if ((dr["grouptype"].ToString() == "") && (sep == sepl.Last()))
+                                {
+                                    continue;
+                                }
+                                DataSet pointsofmachine = (new SQLPart()).GetPIAvgPoints();
+                                if (pointsofmachine != null)
+                                {
+                                    foreach (DataRow dr2 in pointsofmachine.Tables[0].Rows)
+                                    {
+                                        if (int.Parse(dr2["machineid"].ToString()) == int.Parse(dr["machineid"].ToString()))
+                                        {
+                                            double? avgvalue = (new PIAvgData()).GetAvgValue(dr2["pointname"].ToString(), sep.StartTime, sep.EndTime, 0);
+                                            //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
+                                            if (avgvalue == null)
+                                            {
+                                                if (ce.par_ot_dst_1.Where(i => i.pname == dr2["pointname"].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00"))).Count() > 0)
+                                                {
+                                                    ce.par_ot_dst_1.RemoveAll(i => i.pname == dr2["pointname"].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
+                                                }
+                                            }
+                                            else
+                                            {
+                                                ce.AddToPar_otls_1(dr2["pointname"].ToString(), DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")), (double)avgvalue);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <param name="ce"></param>
+        private void HourAvgValue_ForFurnace_2(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
+            if (frunningrd != null)
+            {
+                foreach (DataRow dr in frunningrd.Tables[0].Rows)
+                {
+                    List<StartEndPair> sepl = GetStartEndPair_Hour(DateTime.Parse(dr["starttime"].ToString()), DateTime.Parse(dr["endtime"].ToString()));
+                    if (sepl != null)
+                    {
+                        foreach (StartEndPair sep in sepl)
+                        {
+                            if ((sep.StartTime <= et) && (sep.StartTime >= st))
+                            {
+                                // add biz logic
+                                if ((dr["grouptype"].ToString() == "") && (sep == sepl.Last()))
+                                {
+                                    continue;
+                                }
+                                DataSet pointsofmachine = (new SQLPart()).GetPIAvgPoints();
+                                if (pointsofmachine != null)
+                                {
+                                    foreach (DataRow dr2 in pointsofmachine.Tables[0].Rows)
+                                    {
+                                        if (int.Parse(dr2["machineid"].ToString()) == int.Parse(dr["machineid"].ToString()))
+                                        {
+                                            double? avgvalue = (new PIAvgData()).GetAvgValue(dr2["pointname"].ToString(), sep.StartTime, sep.EndTime, 0);
+                                            //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
+                                            if (avgvalue == null)
+                                            {
+                                                if (ce.par_ot_dst_2.Where(i => i.pname == dr2["pointname"].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00"))).Count() > 0)
+                                                {
+                                                    ce.par_ot_dst_2.RemoveAll(i => i.pname == dr2["pointname"].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
+                                                }
+                                            }
+                                            else
+                                            {
+                                                ce.AddToPar_otls_2(dr2["pointname"].ToString(), DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")), (double)avgvalue);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <param name="ce"></param>
+        private void HourAvgValue_ForFurnace_3(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
+            if (frunningrd != null)
+            {
+                foreach (DataRow dr in frunningrd.Tables[0].Rows)
+                {
+                    List<StartEndPair> sepl = GetStartEndPair_Hour(DateTime.Parse(dr["starttime"].ToString()), DateTime.Parse(dr["endtime"].ToString()));
+                    if (sepl != null)
+                    {
+                        foreach (StartEndPair sep in sepl)
+                        {
+                            if ((sep.StartTime <= et) && (sep.StartTime >= st))
+                            {
+                                // add biz logic
+                                if ((dr["grouptype"].ToString() == "") && (sep == sepl.Last()))
+                                {
+                                    continue;
+                                }
+                                DataSet pointsofmachine = (new SQLPart()).GetPIAvgPoints();
+                                if (pointsofmachine != null)
+                                {
+                                    foreach (DataRow dr2 in pointsofmachine.Tables[0].Rows)
+                                    {
+                                        if (int.Parse(dr2["machineid"].ToString()) == int.Parse(dr["machineid"].ToString()))
+                                        {
+                                            double? avgvalue = (new PIAvgData()).GetAvgValue(dr2["pointname"].ToString(), sep.StartTime, sep.EndTime, 0);
+                                            //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
+                                            if (avgvalue == null)
+                                            {
+                                                if (ce.par_ot_dst_3.Where(i => i.pname == dr2["pointname"].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00"))).Count() > 0)
+                                                {
+                                                    ce.par_ot_dst_3.RemoveAll(i => i.pname == dr2["pointname"].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
+                                                }
+                                            }
+                                            else
+                                            {
+                                                ce.AddToPar_otls_3(dr2["pointname"].ToString(), DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")), (double)avgvalue);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <param name="ce"></param>
+        private void HourAvgValue_ForFurnace_4(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
+            if (frunningrd != null)
+            {
+                foreach (DataRow dr in frunningrd.Tables[0].Rows)
+                {
+                    List<StartEndPair> sepl = GetStartEndPair_Hour(DateTime.Parse(dr["starttime"].ToString()), DateTime.Parse(dr["endtime"].ToString()));
+                    if (sepl != null)
+                    {
+                        foreach (StartEndPair sep in sepl)
+                        {
+                            if ((sep.StartTime <= et) && (sep.StartTime >= st))
+                            {
+                                // add biz logic
+                                if ((dr["grouptype"].ToString() == "") && (sep == sepl.Last()))
+                                {
+                                    continue;
+                                }
+                                DataSet pointsofmachine = (new SQLPart()).GetPIAvgPoints();
+                                if (pointsofmachine != null)
+                                {
+                                    foreach (DataRow dr2 in pointsofmachine.Tables[0].Rows)
+                                    {
+                                        if (int.Parse(dr2["machineid"].ToString()) == int.Parse(dr["machineid"].ToString()))
+                                        {
+                                            double? avgvalue = (new PIAvgData()).GetAvgValue(dr2["pointname"].ToString(), sep.StartTime, sep.EndTime, 0);
+                                            //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
+                                            if (avgvalue == null)
+                                            {
+                                                if (ce.par_ot_dst_4.Where(i => i.pname == dr2["pointname"].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00"))).Count() > 0)
+                                                {
+                                                    ce.par_ot_dst_4.RemoveAll(i => i.pname == dr2["pointname"].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
+                                                }
+                                            }
+                                            else
+                                            {
+                                                ce.AddToPar_otls_4(dr2["pointname"].ToString(), DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")), (double)avgvalue);
                                             }
                                         }
                                     }
@@ -880,21 +1115,21 @@ namespace LocalPIData
                                     {
                                         if (int.Parse(c.Split(',')[1]) == int.Parse(dr["machineid"].ToString()))
                                         {
-                                            DataSet ds = (new SQLPart()).GetSingleAvgRd_Web(c.Split(',')[1], c.Split(',')[2], sep.StartTime);
+                                            DataSet ds = (new SQLPart()).GetSingleAvgRd_Web(c.Split(',')[1], c.Split(',')[2], DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
                                             if (ds != null && ds.Tables[0].Rows.Count > 0)
                                             {
                                                 double? avgvalue = double.Parse(ds.Tables[0].Rows[0][0].ToString());
                                                 //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
                                                 if (avgvalue == null)
                                                 {
-                                                    if (ce.par_otw_dst.Where(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == sep.StartTime).Count() > 0)
+                                                    if (ce.par_otw_dst.Where(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00"))).Count() > 0)
                                                     {
-                                                        ce.par_otw_dst.RemoveAll(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == sep.StartTime);
+                                                        ce.par_otw_dst.RemoveAll(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    ce.AddToPar_otwls(c.Split(',')[0].ToString(), sep.StartTime, (double)avgvalue);
+                                                    ce.AddToPar_otwls(c.Split(',')[0].ToString(), DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")), (double)avgvalue);
                                                 }
                                             }
                                         }
@@ -907,6 +1142,259 @@ namespace LocalPIData
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <param name="ce"></param>
+        public void HourAvgValue_ForFurnace_Web_Parallel(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            DateTime[] dt_a = EPASync.CocurrencyT.GetAppropriateTimeArray(st, et);
+            Parallel.Invoke(
+                () => HourAvgValue_ForFurnace_Web_1(dt_a[0], dt_a[1], ce),
+                () => HourAvgValue_ForFurnace_Web_2(dt_a[2], dt_a[3], ce),
+                () => HourAvgValue_ForFurnace_Web_3(dt_a[4], dt_a[5], ce),
+                () => HourAvgValue_ForFurnace_Web_4(dt_a[6], dt_a[7], ce)
+                );
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <param name="ce"></param>
+        private void HourAvgValue_ForFurnace_Web_1(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
+            LoadOutputWebConfig();
+            if (frunningrd != null)
+            {
+                foreach (DataRow dr in frunningrd.Tables[0].Rows)
+                {
+                    List<StartEndPair> sepl = GetStartEndPair_Hour(DateTime.Parse(dr["starttime"].ToString()), DateTime.Parse(dr["endtime"].ToString()));
+                    if (sepl != null)
+                    {
+                        foreach (StartEndPair sep in sepl)
+                        {
+                            if ((sep.StartTime <= et) && (sep.StartTime >= st))
+                            {
+                                // add biz logic
+                                if ((dr["grouptype"].ToString() == "") && (sep == sepl.Last()))
+                                {
+                                    continue;
+                                }
+
+                                if ((output_web_config != null) && (output_web_config.Count > 0))
+                                {
+                                    foreach (string c in output_web_config)
+                                    {
+                                        if (int.Parse(c.Split(',')[1]) == int.Parse(dr["machineid"].ToString()))
+                                        {
+                                            DataSet ds = (new SQLPart()).GetSingleAvgRd_Web(c.Split(',')[1], c.Split(',')[2], DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
+                                            if (ds != null && ds.Tables[0].Rows.Count > 0)
+                                            {
+                                                double? avgvalue = double.Parse(ds.Tables[0].Rows[0][0].ToString());
+                                                //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
+                                                if (avgvalue == null)
+                                                {
+                                                    if (ce.par_otw_dst_1.Where(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00"))).Count() > 0)
+                                                    {
+                                                        ce.par_otw_dst_1.RemoveAll(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    ce.AddToPar_otwls_1(c.Split(',')[0].ToString(), DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")), (double)avgvalue);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <param name="ce"></param>
+        private void HourAvgValue_ForFurnace_Web_2(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
+            LoadOutputWebConfig();
+            if (frunningrd != null)
+            {
+                foreach (DataRow dr in frunningrd.Tables[0].Rows)
+                {
+                    List<StartEndPair> sepl = GetStartEndPair_Hour(DateTime.Parse(dr["starttime"].ToString()), DateTime.Parse(dr["endtime"].ToString()));
+                    if (sepl != null)
+                    {
+                        foreach (StartEndPair sep in sepl)
+                        {
+                            if ((sep.StartTime <= et) && (sep.StartTime >= st))
+                            {
+                                // add biz logic
+                                if ((dr["grouptype"].ToString() == "") && (sep == sepl.Last()))
+                                {
+                                    continue;
+                                }
+
+                                if ((output_web_config != null) && (output_web_config.Count > 0))
+                                {
+                                    foreach (string c in output_web_config)
+                                    {
+                                        if (int.Parse(c.Split(',')[1]) == int.Parse(dr["machineid"].ToString()))
+                                        {
+                                            DataSet ds = (new SQLPart()).GetSingleAvgRd_Web(c.Split(',')[1], c.Split(',')[2], DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
+                                            if (ds != null && ds.Tables[0].Rows.Count > 0)
+                                            {
+                                                double? avgvalue = double.Parse(ds.Tables[0].Rows[0][0].ToString());
+                                                //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
+                                                if (avgvalue == null)
+                                                {
+                                                    if (ce.par_otw_dst_2.Where(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00"))).Count() > 0)
+                                                    {
+                                                        ce.par_otw_dst_2.RemoveAll(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    ce.AddToPar_otwls_2(c.Split(',')[0].ToString(), DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")), (double)avgvalue);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <param name="ce"></param>
+        private void HourAvgValue_ForFurnace_Web_3(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
+            LoadOutputWebConfig();
+            if (frunningrd != null)
+            {
+                foreach (DataRow dr in frunningrd.Tables[0].Rows)
+                {
+                    List<StartEndPair> sepl = GetStartEndPair_Hour(DateTime.Parse(dr["starttime"].ToString()), DateTime.Parse(dr["endtime"].ToString()));
+                    if (sepl != null)
+                    {
+                        foreach (StartEndPair sep in sepl)
+                        {
+                            if ((sep.StartTime <= et) && (sep.StartTime >= st))
+                            {
+                                // add biz logic
+                                if ((dr["grouptype"].ToString() == "") && (sep == sepl.Last()))
+                                {
+                                    continue;
+                                }
+
+                                if ((output_web_config != null) && (output_web_config.Count > 0))
+                                {
+                                    foreach (string c in output_web_config)
+                                    {
+                                        if (int.Parse(c.Split(',')[1]) == int.Parse(dr["machineid"].ToString()))
+                                        {
+                                            DataSet ds = (new SQLPart()).GetSingleAvgRd_Web(c.Split(',')[1], c.Split(',')[2], DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
+                                            if (ds != null && ds.Tables[0].Rows.Count > 0)
+                                            {
+                                                double? avgvalue = double.Parse(ds.Tables[0].Rows[0][0].ToString());
+                                                //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
+                                                if (avgvalue == null)
+                                                {
+                                                    if (ce.par_otw_dst_3.Where(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00"))).Count() > 0)
+                                                    {
+                                                        ce.par_otw_dst_3.RemoveAll(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    ce.AddToPar_otwls_3(c.Split(',')[0].ToString(), DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")), (double)avgvalue);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        /// <param name="ce"></param>
+        private void HourAvgValue_ForFurnace_Web_4(DateTime st, DateTime et, EPASync.ComparerEngine ce)
+        {
+            DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
+            LoadOutputWebConfig();
+            if (frunningrd != null)
+            {
+                foreach (DataRow dr in frunningrd.Tables[0].Rows)
+                {
+                    List<StartEndPair> sepl = GetStartEndPair_Hour(DateTime.Parse(dr["starttime"].ToString()), DateTime.Parse(dr["endtime"].ToString()));
+                    if (sepl != null)
+                    {
+                        foreach (StartEndPair sep in sepl)
+                        {
+                            if ((sep.StartTime <= et) && (sep.StartTime >= st))
+                            {
+                                // add biz logic
+                                if ((dr["grouptype"].ToString() == "") && (sep == sepl.Last()))
+                                {
+                                    continue;
+                                }
+
+                                if ((output_web_config != null) && (output_web_config.Count > 0))
+                                {
+                                    foreach (string c in output_web_config)
+                                    {
+                                        if (int.Parse(c.Split(',')[1]) == int.Parse(dr["machineid"].ToString()))
+                                        {
+                                            DataSet ds = (new SQLPart()).GetSingleAvgRd_Web(c.Split(',')[1], c.Split(',')[2], DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
+                                            if (ds != null && ds.Tables[0].Rows.Count > 0)
+                                            {
+                                                double? avgvalue = double.Parse(ds.Tables[0].Rows[0][0].ToString());
+                                                //if it is null, check whether destination set has the related rd, if it has, delete it from destination set to avoid synchronizing
+                                                if (avgvalue == null)
+                                                {
+                                                    if (ce.par_otw_dst_4.Where(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00"))).Count() > 0)
+                                                    {
+                                                        ce.par_otw_dst_4.RemoveAll(i => i.pname == c.Split(',')[0].ToString() && i.timestamps == DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")));
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    ce.AddToPar_otwls_4(c.Split(',')[0].ToString(), DateTime.Parse(sep.StartTime.ToString("yyyy-MM-dd HH:00:00")), (double)avgvalue);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         /// <summary>
         /// 
         /// </summary>

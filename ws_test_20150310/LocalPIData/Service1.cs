@@ -81,6 +81,25 @@ namespace LocalPIData
                     EPASync.ComparerEngine ce = new ComparerEngine();
                     DateTime ts = DateTime.Now;
 
+                    //output total parallelism
+                    ce.InitPar_otls_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    (new Biz()).HourAvgValue_ForFurnace_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
+                    ce.MarkPar_otls_Parallel();
+                    ce.CommitPar_otls_Parallel();
+                    //output total (web 2.0 data) parallelism
+                    ce.InitPar_otwls_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    (new Biz()).HourAvgValue_ForFurnace_Web_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
+                    ce.MarkPar_otwls_Parallel();
+                    ce.CommitPar_otwls_Parallel();
+                    //output total remote parallelism
+                    ce.InitPar_otls2_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, Biz.plantid, null);
+                    ce.MarkPar_otls2_Parallel();
+                    ce.CommitPar_otls2_Parallel();
+                    //output total (web 2.0) remote parallelism
+                    ce.InitPar_otlsw2_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, Biz.plantid, null);
+                    ce.MarkPar_otwls2_Parallel();
+                    ce.CommitPar_otwls2_Parallel();
+
                     //output total
                     ce.InitPar_otls(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
                     (new Biz()).HourAvgValue_ForFurnace(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
