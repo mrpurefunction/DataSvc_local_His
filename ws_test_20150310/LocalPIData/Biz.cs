@@ -37,16 +37,16 @@ namespace LocalPIData
     {
         public static int plantid = 1;
 
-        public List<string> output_web_config = null;
+        //public List<string> output_web_config = null;
         /// <summary>
         /// 
         /// </summary>
         public Biz()
         {
-            if (output_web_config == null)
-            {
-                output_web_config = new List<string>();
-            }
+            //if (output_web_config == null)
+            //{
+            //    output_web_config = new List<string>();
+            //}
         }
 
         /// <summary>
@@ -1091,7 +1091,7 @@ namespace LocalPIData
         public void HourAvgValue_ForFurnace_Web(DateTime st, DateTime et, EPASync.ComparerEngine ce)
         {
             DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
-            LoadOutputWebConfig();
+            List<string> output_web_config = LoadOutputWebConfig();
             if (frunningrd != null)
             {
                 foreach (DataRow dr in frunningrd.Tables[0].Rows)
@@ -1168,7 +1168,7 @@ namespace LocalPIData
         private void HourAvgValue_ForFurnace_Web_1(DateTime st, DateTime et, EPASync.ComparerEngine ce)
         {
             DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
-            LoadOutputWebConfig();
+            List<string> output_web_config = LoadOutputWebConfig();
             if (frunningrd != null)
             {
                 foreach (DataRow dr in frunningrd.Tables[0].Rows)
@@ -1227,7 +1227,7 @@ namespace LocalPIData
         private void HourAvgValue_ForFurnace_Web_2(DateTime st, DateTime et, EPASync.ComparerEngine ce)
         {
             DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
-            LoadOutputWebConfig();
+            List<string> output_web_config = LoadOutputWebConfig();
             if (frunningrd != null)
             {
                 foreach (DataRow dr in frunningrd.Tables[0].Rows)
@@ -1286,7 +1286,7 @@ namespace LocalPIData
         private void HourAvgValue_ForFurnace_Web_3(DateTime st, DateTime et, EPASync.ComparerEngine ce)
         {
             DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
-            LoadOutputWebConfig();
+            List<string> output_web_config = LoadOutputWebConfig();
             if (frunningrd != null)
             {
                 foreach (DataRow dr in frunningrd.Tables[0].Rows)
@@ -1345,7 +1345,7 @@ namespace LocalPIData
         private void HourAvgValue_ForFurnace_Web_4(DateTime st, DateTime et, EPASync.ComparerEngine ce)
         {
             DataSet frunningrd = (new SQLPart()).GetRelatedFurnaceRunningRd(st, et);
-            LoadOutputWebConfig();
+            List<string> output_web_config = LoadOutputWebConfig();
             if (frunningrd != null)
             {
                 foreach (DataRow dr in frunningrd.Tables[0].Rows)
@@ -1398,10 +1398,11 @@ namespace LocalPIData
         /// <summary>
         /// 
         /// </summary>
-        public void LoadOutputWebConfig()
+        public List<string> LoadOutputWebConfig()
         {
             try
             {
+                List<string> output_web_config = new List<string>();
                 AppSettingsReader asr = new AppSettingsReader();
                 string filename = (string)asr.GetValue("OutputWeb", typeof(string));
                 FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
@@ -1416,10 +1417,11 @@ namespace LocalPIData
                 }
                 sr.Close();
                 fs.Close();
+                return output_web_config;
             }
             catch (Exception ex)
             {
-
+                return null;
             }
         }
 

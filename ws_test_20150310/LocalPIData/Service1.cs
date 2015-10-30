@@ -101,26 +101,26 @@ namespace LocalPIData
                     ce.CommitPar_otwls2_Parallel();
 
                     //output total
-                    ce.InitPar_otls(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
-                    (new Biz()).HourAvgValue_ForFurnace(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
-                    ce.MarkPar_otls();
-                    ce.CommitPar_otls();
+                    //ce.InitPar_otls(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    //(new Biz()).HourAvgValue_ForFurnace(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
+                    //ce.MarkPar_otls();
+                    //ce.CommitPar_otls();
 
                     //output total (web 2.0 data)
-                    ce.InitPar_otwls(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
-                    (new Biz()).HourAvgValue_ForFurnace_Web(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
-                    ce.MarkPar_otwls();
-                    ce.CommitPar_otwls();
+                    //ce.InitPar_otwls(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    //(new Biz()).HourAvgValue_ForFurnace_Web(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
+                    //ce.MarkPar_otwls();
+                    //ce.CommitPar_otwls();
 
                     //output total remote
-                    ce.InitPar_otls2(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, Biz.plantid, null);
-                    ce.MarkPar_otls2();
-                    ce.CommitPar_otls2();
+                    //ce.InitPar_otls2(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, Biz.plantid, null);
+                    //ce.MarkPar_otls2();
+                    //ce.CommitPar_otls2();
 
                     //output total (web 2.0) remote
-                    ce.InitPar_otlsw2(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, Biz.plantid, null);
-                    ce.MarkPar_otwls2();
-                    ce.CommitPar_otwls2();
+                    //ce.InitPar_otlsw2(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, Biz.plantid, null);
+                    //ce.MarkPar_otwls2();
+                    //ce.CommitPar_otwls2();
 
 
 
