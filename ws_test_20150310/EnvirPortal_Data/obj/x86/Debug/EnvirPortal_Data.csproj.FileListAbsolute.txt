@@ -128,7 +128,6 @@ C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\bin\Debug\Envir
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.exe
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.pdb
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.csprojResolveAssemblyReference.cache
-C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.dll
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.dll
@@ -139,3 +138,4 @@ C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\bin\Debug\Micro
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.pdb
 C:\Users\Administrator\Desktop\ws_test_20150310\EnvirPortal_Data\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\EnvirPortal_Data\obj\x86\Debug\EnvirPortal_Data.csprojResolveAssemblyReference.cache

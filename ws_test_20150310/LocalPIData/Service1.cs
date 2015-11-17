@@ -78,27 +78,59 @@ namespace LocalPIData
                     //(new Biz()).CalibRuleValueBiz_Outside(DateTime.Parse(DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")));
 
                     //update the above code to sync mode to avoid t_rulelogs modification
-                    EPASync.ComparerEngine ce = new ComparerEngine();
+                    
                     DateTime ts = DateTime.Now;
 
-                    //output total parallelism
-                    ce.InitPar_otls_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
-                    (new Biz()).HourAvgValue_ForFurnace_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
-                    ce.MarkPar_otls_Parallel();
-                    ce.CommitPar_otls_Parallel();
-                    //output total (web 2.0 data) parallelism
-                    ce.InitPar_otwls_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
-                    (new Biz()).HourAvgValue_ForFurnace_Web_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
-                    ce.MarkPar_otwls_Parallel();
-                    ce.CommitPar_otwls_Parallel();
-                    //output total remote parallelism
-                    ce.InitPar_otls2_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, Biz.plantid, null);
-                    ce.MarkPar_otls2_Parallel();
-                    ce.CommitPar_otls2_Parallel();
-                    //output total (web 2.0) remote parallelism
-                    ce.InitPar_otlsw2_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, Biz.plantid, null);
-                    ce.MarkPar_otwls2_Parallel();
-                    ce.CommitPar_otwls2_Parallel();
+                    //modified 2015/11/17
+                    DateTime st = DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00"));
+                    DateTime et = ts;
+                    DateTime tempts = st;
+                    while (tempts < et)
+                    {
+                        //output total (web 2.0 data) parallelism
+                        EPASync.ComparerEngine ce = new ComparerEngine();
+                        ce.InitPar_otwls_Parallel(tempts, tempts.AddDays(1.0) > et ? et : tempts.AddDays(1.0), 0, null);
+                        (new Biz()).HourAvgValue_ForFurnace_Web_Parallel(tempts, tempts.AddDays(1.0) > et ? et : tempts.AddDays(1.0), ce);
+                        ce.MarkPar_otwls_Parallel();
+                        ce.CommitPar_otwls_Parallel();
+
+                        //output total (web 2.0) remote parallelism
+                        ce.InitPar_otlsw2_Parallel(tempts, tempts.AddDays(1.0) > et ? et : tempts.AddDays(1.0), Biz.plantid, null);
+                        ce.MarkPar_otwls2_Parallel();
+                        ce.CommitPar_otwls2_Parallel();
+
+                        //output total parallelism
+                        ce.InitPar_otls_Parallel(tempts, tempts.AddDays(1.0) > et ? et : tempts.AddDays(1.0), 0, null);
+                        (new Biz()).HourAvgValue_ForFurnace_Parallel(tempts, tempts.AddDays(1.0) > et ? et : tempts.AddDays(1.0), ce);
+                        ce.MarkPar_otls_Parallel();
+                        ce.CommitPar_otls_Parallel();
+
+                        //output total remote parallelism
+                        ce.InitPar_otls2_Parallel(tempts, tempts.AddDays(1.0) > et ? et : tempts.AddDays(1.0), Biz.plantid, null);
+                        ce.MarkPar_otls2_Parallel();
+                        ce.CommitPar_otls2_Parallel();
+
+                        tempts = tempts.AddDays(1.0);
+                    }
+
+                    ////output total parallelism
+                    //ce.InitPar_otls_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    //(new Biz()).HourAvgValue_ForFurnace_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
+                    //ce.MarkPar_otls_Parallel();
+                    //ce.CommitPar_otls_Parallel();
+                    ////output total (web 2.0 data) parallelism
+                    //ce.InitPar_otwls_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    //(new Biz()).HourAvgValue_ForFurnace_Web_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, ce);
+                    //ce.MarkPar_otwls_Parallel();
+                    //ce.CommitPar_otwls_Parallel();
+                    ////output total remote parallelism
+                    //ce.InitPar_otls2_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, Biz.plantid, null);
+                    //ce.MarkPar_otls2_Parallel();
+                    //ce.CommitPar_otls2_Parallel();
+                    ////output total (web 2.0) remote parallelism
+                    //ce.InitPar_otlsw2_Parallel(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, Biz.plantid, null);
+                    //ce.MarkPar_otwls2_Parallel();
+                    //ce.CommitPar_otwls2_Parallel();
 
                     //output total
                     //ce.InitPar_otls(DateTime.Parse(ts.AddMonths(-2).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
@@ -122,41 +154,40 @@ namespace LocalPIData
                     //ce.MarkPar_otwls2();
                     //ce.CommitPar_otwls2();
 
+                    EPASync.ComparerEngine ce2 = new ComparerEngine();
 
-
-                    (new Biz()).CalibSpanBiz_Sync(ts.AddMonths(-3), ts, ce);
+                    (new Biz()).CalibSpanBiz_Sync(ts.AddMonths(-3), ts, ce2);
                     //add something for select existed rds
-                    ce.InitCrls2(ts.AddMonths(-3), ts, 0, new int[] { 0 });
-                    ce.MarkCrls2();
-                    ce.CommitCrls2();
+                    ce2.InitCrls2(ts.AddMonths(-3), ts, 0, new int[] { 0 });
+                    ce2.MarkCrls2();
+                    ce2.CommitCrls2();
 
-                    (new Biz()).CalibRuleValueBiz_Sync(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(ts.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")), ce);
-                    (new Biz()).CalibRuleValueBiz_Outside_Sync(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(ts.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")), ce);
+                    (new Biz()).CalibRuleValueBiz_Sync(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(ts.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")), ce2);
+                    (new Biz()).CalibRuleValueBiz_Outside_Sync(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(ts.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")), ce2);
                     //add something for select existed rds
-                    ce.InitCrvls2(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-dd HH:00:00")).AddHours(-3.0), DateTime.Parse(ts.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")).AddHours(-1.0), 0, new int[] { 0 });
-                    ce.MarkCrvls2();
-                    ce.CommitCrvls2();
+                    ce2.InitCrvls2(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-dd HH:00:00")).AddHours(-3.0), DateTime.Parse(ts.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")).AddHours(-1.0), 0, new int[] { 0 });
+                    ce2.MarkCrvls2();
+                    ce2.CommitCrvls2();
 
-                    (new Biz()).RunningAsync_Month(DateTime.Parse(ts.AddMonths(-6).ToString("yyyy-MM-01 00:00:00")), ts, ce);
-                    ce.InitAscrls(DateTime.Parse(ts.AddMonths(-6).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
-                    ce.MarkAscrls();
-                    ce.CommitAscrls();
+                    (new Biz()).RunningAsync_Month(DateTime.Parse(ts.AddMonths(-6).ToString("yyyy-MM-01 00:00:00")), ts, ce2);
+                    ce2.InitAscrls(DateTime.Parse(ts.AddMonths(-6).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    ce2.MarkAscrls();
+                    ce2.CommitAscrls();
 
-                    (new Biz()).MachineStopStatistic_Month(DateTime.Parse(ts.AddMonths(-6).ToString("yyyy-MM-01 00:00:00")), ts, ce);
-                    ce.InitMsls(DateTime.Parse(ts.AddMonths(-6).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
-                    ce.MarkMsls();
-                    ce.CommitMsls();
+                    (new Biz()).MachineStopStatistic_Month(DateTime.Parse(ts.AddMonths(-6).ToString("yyyy-MM-01 00:00:00")), ts, ce2);
+                    ce2.InitMsls(DateTime.Parse(ts.AddMonths(-6).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    ce2.MarkMsls();
+                    ce2.CommitMsls();
 
                     //init dst dataset first
-                    ce.InitHals(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
-                    (new Biz()).HourAvgValue_Month(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-01 00:00:00")), ts, ce);
-                    ce.MarkHals();
-                    ce.CommitHals();
+                    ce2.InitHals(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    (new Biz()).HourAvgValue_Month(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-01 00:00:00")), ts, ce2);
+                    ce2.MarkHals();
+                    ce2.CommitHals();
 
                     //calculate report value
-                    (new MonthAvgCalculation.Biz()).SyncHourAvg_Month(-3, ce);
-
-                    
+                    (new MonthAvgCalculation.Biz()).SyncHourAvg_Month(-3, ce2);
+                   
                     //modified 2015/05/13 modified again 2015/05/21
                     (new Biz()).HistoryBiz(DateTime.Parse(DateTime.Now.AddDays(-14).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now/*.AddDays(-1)*/.AddHours(-1.0).ToString("yyyy-MM-dd HH:00:00")));
                     (new Biz()).HistoryBiz_avg(DateTime.Parse(DateTime.Now.AddDays(-21).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd HH:00:00")));                  
