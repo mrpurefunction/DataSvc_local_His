@@ -180,13 +180,13 @@ namespace LocalPIData
                     ce2.CommitMsls();
 
                     //init dst dataset first
-                    ce2.InitHals(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
-                    (new Biz()).HourAvgValue_Month(DateTime.Parse(ts.AddMonths(-3).ToString("yyyy-MM-01 00:00:00")), ts, ce2);
+                    ce2.InitHals(DateTime.Parse(ts.AddMonths(-1).ToString("yyyy-MM-01 00:00:00")), ts, 0, null);
+                    (new Biz()).HourAvgValue_Month(DateTime.Parse(ts.AddMonths(-1).ToString("yyyy-MM-01 00:00:00")), ts, ce2);
                     ce2.MarkHals();
                     ce2.CommitHals();
 
                     //calculate report value
-                    (new MonthAvgCalculation.Biz()).SyncHourAvg_Month(-3, ce2);
+                    (new MonthAvgCalculation.Biz()).SyncHourAvg_Month(-1, ce2);
                    
                     //modified 2015/05/13 modified again 2015/05/21
                     (new Biz()).HistoryBiz(DateTime.Parse(DateTime.Now.AddDays(-14).ToString("yyyy-MM-dd HH:00:00")), DateTime.Parse(DateTime.Now/*.AddDays(-1)*/.AddHours(-1.0).ToString("yyyy-MM-dd HH:00:00")));
