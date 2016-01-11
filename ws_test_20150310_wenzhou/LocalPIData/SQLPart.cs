@@ -277,7 +277,9 @@ namespace LocalPIData
                 StringBuilder sb = new StringBuilder();
                 Database db = DatabaseFactory.CreateDatabase("dbconn");
                 sb.Append("select indicatorvalue from EnvirIndicatorValue t where ");
-                sb.Append("substring(t.pointname,1,1) = '" + mi + "' and ");
+                //modified20160107
+                //sb.Append("substring(t.pointname,1,1) = '" + mi + "' and ");
+                sb.Append("t.pointname = '" + mi + "' and ");
                 sb.Append("t.indicatorid = " + indicatorid + " and ");
                 sb.Append("t.timestamps = '" + ts.ToString("yyyy-MM-dd HH:mm:ss") + "'");
                 System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());

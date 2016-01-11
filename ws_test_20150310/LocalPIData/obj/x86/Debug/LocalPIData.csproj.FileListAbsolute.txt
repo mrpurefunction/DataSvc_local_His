@@ -143,3 +143,17 @@ C:\Users\Administrator\Desktop\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.
 C:\Users\Administrator\Desktop\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.pdb
 C:\Users\Administrator\Desktop\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
 C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\obj\x86\Debug\LocalPIData.csprojResolveAssemblyReference.cache
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\roslyn\csc.exe
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\roslyn\vbc.exe
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\roslyn\VBCSCompiler.exe
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\DataSvc_local_His\ws_test_20150310\LocalPIData\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml

@@ -35,7 +35,11 @@ namespace LocalPIData
 
     public class Biz
     {
-        public static int plantid = 2;
+        /// <summary>
+        /// 
+        /// </summary>
+        //modified 20160108
+        public static int plantid = int.Parse((string)(new AppSettingsReader()).GetValue("plantid", typeof(string)));
 
         //public List<string> output_web_config = null;
         /// <summary>
