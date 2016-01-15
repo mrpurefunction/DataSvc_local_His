@@ -124,6 +124,34 @@ namespace LocalPIData
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="st"></param>
+        /// <param name="et"></param>
+        public void HistoryBiz_Remote(DateTime st, DateTime et)
+        {
+            DataSet pipoints;
+            DateTime tempdt;
+            pipoints = (new SQLPart()).GetPIPoints();
+            if (pipoints != null)
+            {
+                foreach (DataRow dr in pipoints.Tables[0].Rows)
+                {
+                    tempdt = st;
+                    while (tempdt <= et)
+                    {
+                        double? rv = (new PIHisData()).GetHisValue(dr["pointname"].ToString(), tempdt);
+                        if (rv != null)
+                        {
+                            (new SQLPart()).AddPiRecord_Remote(tempdt, dr["pointname"].ToString(), (float)rv, int.Parse(dr["machineid"].ToString()), plantid/*int.Parse(dr[""].ToString())*/);
+                        }
+                        tempdt = tempdt.AddMinutes(1.0);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
         /// 历史平均值函数
         /// </summary>
         /// <param name="st"></param>
