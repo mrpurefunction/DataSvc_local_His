@@ -62,6 +62,46 @@ namespace LocalPIData
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ts"></param>
+        /// <param name="pn"></param>
+        /// <param name="pv"></param>
+        /// <param name="mi"></param>
+        /// <param name="pi"></param>
+        /// <returns></returns>
+        public int AddPiRecord_Remote(DateTime ts, string pn, float pv, int mi, int pi)
+        {
+            try
+            {
+                if (IsPiRdExisted(ts, pn, mi, pi) == false)
+                {
+                    //not existed
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("insert into PiRecords(pname,timestamps,pvalue,updatetime,machineid,plantid) values('");
+                    sb.Append(pn.ToString() + "','");
+                    sb.Append(ts.ToString("yyyy-MM-dd HH:mm:ss") + "',");
+                    sb.Append(pv.ToString() + ",'");
+                    sb.Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',");
+                    sb.Append(mi.ToString() + ",");
+                    sb.Append(pi.ToString() + ")");
+                    Database db = DatabaseFactory.CreateDatabase("dbconn_r");
+                    System.Data.Common.DbCommand dbc = db.GetSqlStringCommand(sb.ToString());
+                    db.ExecuteNonQuery(dbc);
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
         /// update PI data into db 20150826
         /// </summary>
         /// <param name="ts"></param>
