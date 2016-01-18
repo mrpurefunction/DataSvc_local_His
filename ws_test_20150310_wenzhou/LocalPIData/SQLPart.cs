@@ -57,6 +57,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddPiRecord?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return -1;
             }
         }
@@ -97,6 +102,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddPiRecord_Remote?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return -1;
             }
         }
@@ -135,6 +145,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "UpdatePiRecord?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return -1;
             }
         }
@@ -167,6 +182,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "IsPiRdExisted?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -205,6 +225,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddAvgRd?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return -1;
             }
         }
@@ -242,6 +267,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "UpdatePiRecord?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return -1;
             }
         }
@@ -273,6 +303,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "IsAvgRdExisted?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -299,6 +334,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "GetSingleAvgRd?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -327,6 +367,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddSingleAvgRd_Web?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -347,6 +392,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "GetPiPoints?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -367,6 +417,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "GetPiAvgPoints?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -387,6 +442,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "GetCalibPoints?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -417,6 +477,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "IsCalibSpanRdExisted?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -475,6 +540,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "GetRelatedSpans?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -511,6 +581,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddCalibSpanRd?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return -1;
             }
         }
@@ -539,6 +614,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "IsCalibAvgRdExisted?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -576,6 +656,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddPiRecord?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return -1;
             }
         }
@@ -600,6 +685,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddPiRecord?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -626,6 +716,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddPiRecord?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -650,6 +745,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddPiRecord?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -683,6 +783,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddPiRecord?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -716,6 +821,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddPiRecord?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -749,6 +859,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddPiRecord?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -782,6 +897,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddPiRecord?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
@@ -804,6 +924,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "AddPiRecord?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }

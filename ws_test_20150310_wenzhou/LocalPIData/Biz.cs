@@ -41,6 +41,9 @@ namespace LocalPIData
         //modified 20160108
         public static int plantid = int.Parse((string)(new AppSettingsReader()).GetValue("plantid", typeof(string)));
 
+        //add 20160118
+        public static bool publicliblogenabled = (string)(new AppSettingsReader()).GetValue("publicliblogenabled", typeof(string)) == "true" ? true : false;
+
         //public List<string> output_web_config = null;
         /// <summary>
         /// 
@@ -1451,6 +1454,11 @@ namespace LocalPIData
             }
             catch (Exception ex)
             {
+                if (Biz.publicliblogenabled)
+                {
+                    PublicLib.ExceptionBody eb = new PublicLib.ExceptionBody() { et = PublicLib.ExceptionType.Message, info = "LoadOutputWebConfig?" + ex.ToString(), ts = DateTime.Now };
+                    (new PublicLib.Log()).AddExceptionLog(eb, PublicLib.logtype.console);
+                }
                 return null;
             }
         }
